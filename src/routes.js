@@ -1,15 +1,14 @@
 const express = require('express');
+const OngController = require('./controller/OngController')
+const IncidentController = require('./controller/IncidentsController')
 const routes = express.Router();
 
-routes.post('/contato', (req,res,next)=>{
-    const params = req.body;
+routes.post('/ongs',OngController.create);
 
-    console.log(params)
-    res.json({
-        nome:"gabriel",
-        idade:22,
-        email:"cesario203@outlook.com"
-    })
-})
+routes.get('/ongs',OngController.index);
+
+routes.post('/incidents', IncidentController.create)
+
+routes.get('/incidents', IncidentController.list)
 
 module.exports = routes;

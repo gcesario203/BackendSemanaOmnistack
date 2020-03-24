@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const porta = 3333;
-const routes = require('./routes')
+const routes = require('./routes.js')
 const id = 0.00
 
 app.use(express.json())
